@@ -1,0 +1,693 @@
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Full viewport height */
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+  /* Add fade-in animation */
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  /* Adjust as needed */
+  left: 20px;
+  /* Adjust as needed */
+  max-width: 150px;
+  /* Adjust as needed */
+  animation: slideIn 1s ease-out;
+  /* Add slide-in animation for logo */
+  cursor: pointer;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  /* Start hidden */
+  animation: fadeInText 2s ease-in-out forwards;
+  /* Add fade-in animation for text */
+}
+
+h1 {
+  font-size: 5rem;
+  /* Adjust as needed */
+  margin: 0;
+  font-style: italic;
+}
+
+.highlight {
+  color: yellow;
+}
+
+button {
+  margin-top: 20px;
+  /* Adjust as needed */
+  padding: 10px 20px;
+  /* Adjust as needed */
+  font-size: 1.2rem;
+  /* Adjust as needed */
+  background-color: yellow;
+  /* Button background color */
+  color: black;
+  /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  /* Start hidden */
+  animation: fadeInButton 2s ease-in-out forwards 1s;
+  /* Add fade-in animation for button with delay */
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cccc00;
+  /* Adjust as needed */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* second section */
+/* Full second section styles */
+
+.black-section {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 0;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  animation: fadeInContent 2s ease-in-out;
+  /* Add fade-in animation for entire content */
+}
+
+.text {
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 2s ease-in-out forwards;
+  /* Add fade-in animation for text */
+}
+
+.text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: bold;
+  color: yellow;
+}
+
+.text .description {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.text a {
+  display: inline-block;
+  color: #fff;
+  background-color: #ff5733;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.text a:hover {
+  background-color: #c13e1f;
+}
+
+.photos {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* Align photos to bottom */
+  opacity: 0;
+  animation: fadeInPhotos 2s ease-in-out forwards;
+  /* Add fade-in animation for photos */
+}
+
+.photos img {
+  max-width: 100%;
+  /* Adjust size as needed */
+  height: 450px;
+  margin: 10px;
+  border-radius: 5px;
+  /* Added border radius for images */
+}
+
+/* Keyframe animations */
+@keyframes fadeInContent {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInPhotos {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  .black-section {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .text {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .photos {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .text .description {
+    font-size: 1rem;
+  }
+
+  .photos img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* Third section styles */
+
+.third-section {
+  background-color: #000000;
+  /* Darker background */
+  color: #fff;
+  padding: 60px 0;
+  /* Increased padding */
+  position: relative;
+  overflow: hidden;
+}
+
+.third-section .content {
+  max-width: 90%;
+  /* Adjusted for better responsiveness */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Center align text */
+}
+
+.third-section .top-text {
+  margin-bottom: 30px;
+  /* Increased margin */
+}
+
+.third-section .top-text h1 {
+  font-size: 3rem;
+  /* Larger font size */
+  font-style: normal;
+  /* Normal font style */
+  font-weight: bold;
+  /* Bold font weight */
+  color: yellow;
+  /* Different text color */
+  margin-bottom: 15px;
+  /* Increased margin */
+  font-style: italic;
+}
+
+.third-section .top-text .description {
+  font-size: 1.1rem;
+  /* Smaller font size */
+  line-height: 1.8;
+  /* Increased line height */
+}
+
+.third-section .photos-row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow photos to wrap on smaller screens */
+  justify-content: space-around;
+  /* Center align photos with space between */
+  margin-top: 30px;
+  /* Increased margin */
+  cursor: pointer;
+}
+
+.third-section .photo-container {
+  position: relative;
+  width: calc(33.33% - 20px);
+  /* Calculate width with spacing for desktop */
+  max-width: 300px;
+  /* Maximum width for each photo container */
+  margin-bottom: 20px;
+  /* Space between photos */
+}
+
+.third-section .photo-container img {
+  width: 100%;
+  /* Ensure image takes full width of container */
+  max-width: 100%;
+  /* Ensure images don't exceed their natural size */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  /* Box shadow for photos */
+}
+
+.third-section .overlay-text {
+  position: absolute;
+  bottom: 10%;
+  /* Adjusted for better placement */
+  left: 0;
+  width: 100%;
+  color: #fff;
+  /* White text color */
+  text-align: center;
+  font-size: 1.4rem;
+  /* Adjusted font size for mobile */
+  opacity: 1;
+  /* Ensure text is always visible */
+  font-weight: bold;
+  font-style: italic;
+}
+
+.third-section .learn-more {
+  display: inline-block;
+  margin-top: 30px;
+  /* Increased margin */
+  padding: 12px 24px;
+  /* Larger padding */
+  font-size: 1.2rem;
+  /* Larger font size */
+  background-color: #f39c12;
+  /* Different background color */
+  color: #333;
+  /* Dark text color */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  /* Smooth transition */
+}
+
+.third-section .learn-more:hover {
+  background-color: #e67e22;
+  /* Darker color on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .third-section .photos-row {
+    justify-content: center;
+    /* Center align photos on smaller screens */
+  }
+
+  .third-section .photo-container {
+    width: 100%;
+    /* Full width on smaller screens */
+    max-width: 100%;
+    /* Full width on smaller screens */
+    margin-bottom: 30px;
+    /* Increased margin for spacing */
+  }
+
+  .third-section .overlay-text {
+    bottom: 50px;
+    /* Adjusted position for smaller screens */
+    font-size: 1.2rem;
+    /* Adjusted font size for smaller screens */
+  }
+}
+
+/* Fourth section styles */
+
+.fourth-section {
+  background-color: #000000;
+  /* Darker background */
+  color: #fff;
+  padding: 60px 0;
+  /* Increased padding */
+  position: relative;
+  overflow: hidden;
+}
+
+.fourth-section .content {
+  max-width: 90%;
+  /* Adjusted for better responsiveness */
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Center align text */
+}
+
+.fourth-section .top-text {
+  margin-bottom: 30px;
+  /* Increased margin */
+}
+
+.fourth-section .top-text h1 {
+  font-size: 3rem;
+  /* Larger font size */
+  font-style: normal;
+  /* Normal font style */
+  font-weight: bold;
+  /* Bold font weight */
+  color: yellow;
+  /* Different text color */
+  margin-bottom: 15px;
+  /* Increased margin */
+  font-style: italic;
+}
+
+.fourth-section .top-text .description {
+  font-size: 1.1rem;
+  /* Smaller font size */
+  line-height: 1.8;
+  /* Increased line height */
+}
+
+.fourth-section .photos-row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow photos to wrap on smaller screens */
+  justify-content: space-around;
+  /* Center align photos with space between */
+  margin-top: 30px;
+  /* Increased margin */
+  cursor: pointer;
+}
+
+.fourth-section .photo-container {
+  position: relative;
+  width: calc(33.33% - 20px);
+  /* Calculate width with spacing for desktop */
+  max-width: 300px;
+  /* Maximum width for each photo container */
+  margin-bottom: 20px;
+  /* Space between photos */
+}
+
+.fourth-section .photo-container img {
+  width: 100%;
+  /* Ensure image takes full width of container */
+  max-width: 100%;
+  /* Ensure images don't exceed their natural size */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  /* Box shadow for photos */
+}
+
+.photo-description {
+  background-color: yellow;
+  color: #000000;
+}
+
+
+.fourth-section .learn-more:hover {
+  background-color: #e67e22;
+  /* Darker color on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .fourth-section .photos-row {
+    justify-content: center;
+    /* Center align photos on smaller screens */
+  }
+
+  .fourth-section .photo-container {
+    width: 100%;
+    /* Full width on smaller screens */
+    max-width: 100%;
+    /* Full width on smaller screens */
+    margin-bottom: 30px;
+    /* Increased margin for spacing */
+  }
+
+  .fourth-section .overlay-text {
+    bottom: 50px;
+    /* Adjusted position for smaller screens */
+    font-size: 1.2rem;
+    /* Adjusted font size for smaller screens */
+  }
+}
+
+
+/* Fifth section styles */
+
+.fifth-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Full viewport height */
+  overflow: hidden;
+}
+
+.fifth-section .background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fifth-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  color: yellow;
+  text-align: left;
+}
+
+.fifth-section .text-content {
+  width: 100%;
+  max-width: 600px;
+  /* Limit width for better readability */
+}
+
+.fifth-section .text-wrapper {
+  text-align: left;
+  /* Align text to the left */
+  padding-left: 20px;
+  /* Padding to offset from the left edge */
+}
+
+.fifth-section h1 {
+  font-size: 4rem;
+  /* Adjust as needed */
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .fifth-section h1 {
+    font-size: 2.5rem;
+    /* Adjust font size for smaller screens */
+  }
+}
+
+/* Sixth section styles */
+
+.yellow-section {
+  background-color: yellow;
+  color: #333;
+  /* Text color */
+  padding: 60px 0;
+  /* Padding top and bottom */
+  text-align: center;
+  /* Center align overall content */
+}
+
+.yellow-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  /* Space evenly between left, center, and right */
+  align-items: center;
+}
+
+.yellow-section h1 {
+  font-size: 2.5rem;
+  /* Adjust heading font size */
+  margin: 0;
+}
+
+.yellow-section span {
+  display: block;
+  font-size: 1.2rem;
+  /* Adjust span font size */
+  margin-top: 10px;
+  /* Space between h1 and span */
+}
+
+.social-links {
+  margin-top: 30px;
+  /* Space between content and social links */
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #666;
+  /* Darker color on hover */
+}
+
+.copyright {
+  margin-top: 20px;
+  /* Space above copyright text */
+  font-size: 0.9rem;
+  /* Adjust copyright text size */
+  font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .yellow-section .content {
+    flex-direction: column;
+    /* Stack items vertically on smaller screens */
+  }
+
+  .left-text,
+  .center-text,
+  .right-text {
+    margin-bottom: 20px;
+    /* Add margin between sections on smaller screens */
+  }
+}

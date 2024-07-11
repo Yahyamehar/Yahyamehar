@@ -1,0 +1,39 @@
+<!-- addform.component.html -->
+<div class="add-form-container">
+  <div class="background">
+    <!-- Logo and photo -->
+    <div class="logo-section">
+      <img src="assets/logo.png" routerLink="/" routerLinkActive="Home" alt="Logo" class="logo">
+      <img src="assets/form.png" alt="Photo" class="photo">
+    </div>
+
+    <!-- Gym form -->
+    <div class="form-section">
+      <h1>Admission Gym Form</h1>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="membership">Membership Type</label>
+          <select id="membership" name="membership" required>
+            <option value="" disabled selected>Select your option</option>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="annual">Annual</option>
+          </select>
+        </div>
+        <button type="submit" class="join-button">Join Wing</button>
+      </form>
+    </div>
+  </div>
+</div>

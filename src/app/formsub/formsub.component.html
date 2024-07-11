@@ -1,0 +1,34 @@
+<!-- form-sub.component.html -->
+<div [@fadeIn]="success ? 'fadeIn' : ''" class="form-sub-container" role="alert">
+  <div class="header">
+    <img src="assets/logo.png" routerLink="/" alt="Logo" class="logo">
+  </div>
+  <div class="content">
+    <div *ngIf="success; else failure">
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80" fill="#ffcc00">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M17.88 7.88l-7.06 7.06-3.12-3.12-1.76 1.76 4.88 4.88 8.82-8.82z"/>
+        </svg>
+      </div>
+      <div class="text">
+        <h1>Form Submission Successful</h1>
+        <p>Thank you for joining our gym. We will contact you shortly.</p>
+      </div>
+    </div>
+    <ng-template #failure>
+      <div class="failure-message">
+        <h1>Form Submission Failed</h1>
+        <p>Please try again later or contact support.</p>
+      </div>
+    </ng-template>
+    <div class="additional-info">
+      <p>For any questions or additional information, please contact us:</p>
+      <ul>
+        <li>Email: info-gymexample.com</li>
+        <li>Phone: +123 456 7890</li>
+      </ul>
+    </div>
+  </div>
+  <a routerLink="/" class="back-button">Back to Home</a>
+</div>
