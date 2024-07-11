@@ -10,27 +10,39 @@
     <!-- Gym form -->
     <div class="form-section">
       <h1>Admission Gym Form</h1>
-      <form (ngSubmit)="onSubmit()">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+          <div *ngIf="form.get('name')!.invalid && form.get('name')!.touched" class="error">
+            Name is required
+          </div>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+          <div *ngIf="form.get('email')!.invalid && form.get('email')!.touched" class="error">
+            Valid email is required
+          </div>
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+          <input type="tel" id="phone" formControlName="phone" placeholder="Enter your phone number">
+          <div *ngIf="form.get('phone')!.invalid && form.get('phone')!.touched" class="error">
+            Phone number is required
+          </div>
         </div>
         <div class="form-group">
           <label for="membership">Membership Type</label>
-          <select id="membership" name="membership" required>
+          <select id="membership" formControlName="membership">
             <option value="" disabled selected>Select your option</option>
             <option value="monthly">Monthly</option>
             <option value="quarterly">Quarterly</option>
             <option value="annual">Annual</option>
           </select>
+          <div *ngIf="form.get('membership')!.invalid && form.get('membership')!.touched" class="error">
+            Membership type is required
+          </div>
         </div>
         <button type="submit" class="join-button">Join Wing</button>
       </form>
